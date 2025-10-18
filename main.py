@@ -31,6 +31,12 @@ def main():
     while True:
         screen.fill(color)
         updatable.update(dt)
+        
+        for asteroid in asteroids:
+            if asteroid.is_colliding(player) == True:
+                print("Game over!")
+                return 
+
         for d in drawable:
             d.draw(screen)
 
